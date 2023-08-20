@@ -1,13 +1,41 @@
 <div class="test">
   <h3>this is component</h3>
   <h2>Chào bạn {{name}}</h2>
-  <!-- <input type="text" [value]="name">
+  <h2>Bạn {{age}}</h2>
+  <input type="text" [(ngModel)]="name">
   <br>
-  <input type="text" value="{{name}}" title="đây là {{name}}">
+  <input type="text" [(ngModel)]="age">
   <br>
-  <input type="text" [value]="name" [title]="'đây là ' + name"> -->
+  <!-- lấy dữ liệu từ model -->
+  <!-- <input type="text" value="{{name}}" title="đây là {{name}}">
+  <br>
+  <input type="text" [value]="name" [title]="'đây là ' + name">  -->
+  <!-- sử dụng ngIf -->
   <h2 *ngIf="age > 18">Bạn già rồi!!</h2>
   <h2 *ngIf="age < 18">Bạn trẻ lắm!!</h2>
-
-
+  <!-- ngTemplate -->
+  <div *ngIf="age <18 ; then  tre  else gia"></div>
+    <ng-template #gia><h2 >Bạn già rồi!!</h2></ng-template>
+    <ng-template #tre><h2 >Bạn quá trẻ!!</h2></ng-template>
+  <!-- event -->
+  <button (click)="resetName()">reset Ten</button>
 </div>
+  <!-- ngFor -->
+
+  <br>
+  <table class="table">
+    <tr >
+      <td>Thứ tự</td>
+      <td>Tên</td>
+      <td>Giá</td>
+      <td>Hạ giá</td>
+    </tr>
+    <tr *ngFor="let trai of traiCay let i = index">
+      <td>{{i+1}}</td>
+      <td>{{trai.ten |  uppercase}}</td>
+      <td class="right">
+        <span [ngClass]="{'so-am':trai.gia < 13}">{{trai.gia | currency: 'VND'}}</span>
+      </td>
+      <td><span >{{trai.haGia | onSale | uppercase}}</span></td>
+    </tr>
+  </table>
