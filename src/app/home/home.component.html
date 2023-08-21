@@ -39,3 +39,16 @@
       <td><span >{{trai.haGia | onSale | uppercase}}</span></td>
     </tr>
   </table>
+
+  <h1>Tỉnh/Thành phố</h1>
+  <select id="" (change)="onChangeCity($event)">
+    <option value="{{data.city}}" *ngFor="let data of vietnamData">
+      {{data.city}}
+    </option>
+  </select>
+  <h1>Quận/huyện</h1>
+  <select id="" >
+    <option value="{{district}}" *ngFor="let district of districts">
+      {{district}}
+    </option>
+  </select>
