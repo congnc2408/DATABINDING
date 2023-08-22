@@ -1,4 +1,26 @@
+*{
+
+}
+
 .test{
   border: 1px slateblue solid;
   box-shadow:  5px 10px blue;
+  width: 400px;
+}
+.table{
+  text-align: center;
+  font-weight: bold;
+}
+.table tr td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 250px;
+}
+
+.right{
+  text-align: right;
+}
+.so-am{
+  color: red;
+
 }
